@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>{{mensaje}}</h1>
+        <form v-on:submit.prevent="agregarFruta"> <!-- @submit.prevent="agregarTarea" -->
+            <input type="text" placeholder="Introduce la fruta" v-model="nuevaFruta" />
+            <input type="submit" value="Agregar">
+        </form>
+        <ul>
+            
+            <li v-for="fruta in frutas">
+               
+                <!-- <template v-else>
+                    {{fruta.cantidad}}
+                </template> -->
+                {{fruta.cantidad}} - {{fruta.nombre}} -
+                <template v-if="fruta.cantidad == 0">
+                    Sin Stock
+                </template>
+            </li>
+        </ul>
+    </main>
+   
+
+    <!-- <script>
+        var nameInput = document.getElementById('name');
+        nameInput.addEventListener('keyup', function(){
+            document.querySelector('h1').innerHTML = nameInput.value;
+        });
+    </script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js.js"></script>
+
+</body>
+</html>

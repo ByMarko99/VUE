@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1 v-show="conectado">Estas conectado</h1>
+        <h1 v-if="conectado">Estas conectado con v-if</h1>
+
+        <h2 v-if="edad < 18">No puedes entrar</h2>
+        <h2 v-else-if="edad > 200">Eres inmortal</h2>
+        <h2 v-else>Puedes entrar</h2>
+
+        <template v-if="conectado">
+            <ul>
+                <li>Pepe</li>
+                <li>Pepe</li>
+
+            </ul>
+        </template>
+
+    </main>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

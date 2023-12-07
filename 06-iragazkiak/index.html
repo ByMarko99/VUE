@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <ul>
+            <li v-for="juego in mejoresJuegos">
+                {{juego.titulo}}
+            </li>
+        </ul>
+        <input type="search" v-model="busqueda" placeholder="Busca un juego">
+        <ul>
+            <li v-for="juego in buscarJuego">
+                {{juego.titulo}}
+            </li>
+    </main>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

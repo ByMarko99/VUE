@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+
+        <h1>{{mensaje}}</h1>
+
+        <form v-on:submit.prevent="agregarFruta()" >
+            <input type="text" placeholder="Introduce la fruta" v-model="nuevaFruta">
+        <input type="submit" value="Añadir fruta">
+        </form>
+        <ul>
+            <li  v-for="(fruta, index) in frutas">
+
+                <input type="number" v-model="fruta.cantidad">
+                {{ fruta.nombre }} 
+
+                <button type="submit" @click="agregarCantidad(index)">+</button>
+                <template v-if="fruta.cantidad == 0">
+                    Sin Stock
+                </template>
+
+            </li>
+        </ul>
+        <h4>{{cantidad}}</h4>
+
+    </main>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js.js"></script>
+</body>
+</html>
